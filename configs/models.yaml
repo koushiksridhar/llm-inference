@@ -1,0 +1,3 @@
+draft_model: 'phi-2'
+target_model: 'mistral-7b-instruct'
+tokenizer: 'mistral-7b-instruct'
