@@ -7,8 +7,8 @@ def load_tokenizer(name):
     return AutoTokenizer.from_pretrained(name)
 
 def load_models(draft, target, device):
-    draft_model = AutoModelForCausalLM.from_pretrained(draft, torch_dtype=torch.float16).to(device)
-    target_model = AutoModelForCausalLM.from_pretrained(target, torch_dtype=torch.float16).to(device)
+    draft_model = AutoModelForCausalLM.from_pretrained(draft, torch_dtype=torch.float16, device_map=None).to(device)
+    target_model = AutoModelForCausalLM.from_pretrained(target, torch_dtype=torch.float16, device_map=None).to(device)
 
     draft_model.eval()
     target_model.eval()
